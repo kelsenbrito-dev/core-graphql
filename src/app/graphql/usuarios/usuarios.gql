@@ -1,0 +1,33 @@
+type Usuario {
+    _id: ID!
+    nome: String!
+    email: String!
+    senha: String!
+    perfil: Perfil!
+    parceiro: Empresa
+    tenant: Empresa!
+    root: Boolean!
+    token: String
+}
+
+input UsuarioInput {
+    nome: String!
+    email: String!
+    perfil: ID!
+    parceiro: ID
+    tenant: ID!
+    senha: String!
+    root: Boolean!
+}
+
+type Query {
+    usuarios: [Usuario!]!
+    usuario(id: ID!): Usuario!
+}
+ 
+type Mutation {
+    login(email: String!, senha: String!): Usuario!
+    createUsuario(data: UsuarioInput!): Usuario!
+    updateUsuario(id: ID!, data: UsuarioInput!): Usuario!
+    deleteUsuario(id: ID!): Boolean
+}

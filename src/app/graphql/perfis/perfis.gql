@@ -1,0 +1,21 @@
+type Perfil {
+    _id: ID!
+    nome: String!
+    descricao: String!
+}
+
+input PerfilInput {
+    nome: String!
+    descricao: String!
+}
+
+type Query {
+    perfis: [Perfil!]!
+    perfil(id: ID!): Perfil!
+}
+ 
+type Mutation {
+    createPerfil(data: PerfilInput!): Perfil!
+    updatePerfil(id: ID!, data: PerfilInput!): Perfil!
+    deletePerfil(id: ID!): Boolean
+}
