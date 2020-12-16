@@ -1,5 +1,6 @@
-import { UserInputError } from 'apollo-server'
+import { UserInputError } from 'apollo-server-express'
 import bcrypt from 'bcryptjs';
+
 import Usuario from '../../models/Usuario';
 import Perfil from '../../models/Perfil';
 import Empresa from '../../models/Empresa';

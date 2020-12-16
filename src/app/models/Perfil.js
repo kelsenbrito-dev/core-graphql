@@ -5,13 +5,13 @@ const Schema = new mongoose.Schema({
     nome: {
         type: String,
         required: [true, 'Informe o nome do perfil'],
-        trim: true
+        trim: true,
+        index: true,
+        unique: true,
     },
     descricao: {
         type: String,
         required: [true, 'Informe a descrição do perfil'],
-        index: true,
-        unique: true
     }
 });
 

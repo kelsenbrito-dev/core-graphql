@@ -5,7 +5,9 @@ const Schema = new mongoose.Schema({
     nome: {
         type: String,
         required: [true, 'Informe o nome da empresa'],
-        trim: true
+        trim: true,
+        index: true,
+        unique: true,
     },
     cnpj: {
         type: String,
